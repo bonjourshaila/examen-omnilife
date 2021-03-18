@@ -44,7 +44,7 @@
 
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="input-group-prepend col-md-4">
+                                    <div class="input-group-prepend ">
                                         <span class=" col-md-12">Salario en pesos</span>
                                     </div>
                                     <div class="form-group">
@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="input-group-prepend col-md-4">
+                                    <div class="input-group-prepend ">
                                         <span class=" col-md-12">Salario en dolares</span>
                                     </div>
                                     <div class="form-group">
