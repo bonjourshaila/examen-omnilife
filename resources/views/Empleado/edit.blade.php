@@ -3,7 +3,6 @@
 <div class="row">
     <section class="content container-fluid">
         <div class="col-md-8 col-md-offset-2">
-
             <div class="alert alert-danger" id="mensaje-error" style="display:none">
                 <strong>Error!</strong> Revise los campos.<br><br>
                 <ul id="lista-error">
@@ -12,8 +11,6 @@
             <div class="alert alert-success" id="mensaje-success" style="display:none">
                 <p>Se editó correctamente el empleado</p>
             </div>
-
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Editar empleado</h3>
@@ -45,13 +42,7 @@
                                             value="{{$empleado->nombre}}">
                                     </div>
                                 </div>
-
-
                             </div>
-
-
-
-
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="input-group-prepend ">
@@ -71,10 +62,7 @@
                                             class="form-control input-sm" value="{{$empleado->salarioDolares}}" readonly>
                                     </div>
                                 </div>
-                                
-
                             </div>
-
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="input-group-prepend col-md-4">
@@ -95,11 +83,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="input-group-prepend col-md-4">
@@ -119,9 +102,7 @@
                                             value="{{$empleado->telefono}}">
                                     </div>
                                 </div>
-
                             </div>
-
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="input-group-prepend col-md-4">
@@ -133,11 +114,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
                             <div class="row">
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -145,12 +121,10 @@
                                         class="btn btn-success btn-block">
                                     <a href="{{ route('empleado.index') }}" class="btn btn-info btn-block">Atrás</a>
                                 </div>
-
                             </div>
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -170,8 +144,6 @@
                 headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },             
                 data: $('#form-guardar-empleado').serialize(),
                 success: function (data) {
-                    console.log(data);
-
                     if (data.status === 0) {
                         console.log("todo ok");
                         $("#mensaje-error").hide();
@@ -181,13 +153,11 @@
                         }, 3000);
                     }
                     else {
-                        console.log("todo mal");
                         var msg_error = '';
                         for (var i = 0; i < data.error.length; i++) {
                             msg_error += '<li>' + data.error[i] + '</li>'
                         }
                         $('#lista-error').append(msg_error);
-                        console.log(msg_error);
                         $("#mensaje-error").show();
                     }
                 }

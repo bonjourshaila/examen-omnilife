@@ -156,11 +156,8 @@
 
                 headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
                 data: $('#form-guardar-empleado').serialize(),
-                success: function (data) {
-                    console.log(data.status);
-
+                success: function (data) {                  
                     if (data.status === 0) {
-                        console.log("todo ok");
                         $("#mensaje-error").hide();
                         $("#mensaje-success").show();
                         document.getElementById("form-guardar-empleado").reset();
@@ -170,14 +167,11 @@
                         }, 3000);
                     }
                     else {
-                        console.log(data);
-                        console.log(data.error.length);
                         var msg_error = '';
                         for (var i = 0; i < data.error.length; i++) {
                             msg_error += '<li>' + data.error[i] + '</li>'
                         }
                         $('#lista-error').append(msg_error);
-                        console.log(msg_error);
                         $("#mensaje-error").show();
                     }
                 }
@@ -204,7 +198,6 @@
                 
             },
             error : function(){
-               console.log('Ocurrio un error en el consumo del servicio de BANXICO, intentar mas tarde');
             }
         });
     }
